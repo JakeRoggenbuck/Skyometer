@@ -1,0 +1,336 @@
+<style>
+* {
+font-family: 'Roboto', sans-serif;
+}
+
+:root {
+--primary-color: #21a6f6;
+--secondary-color: #536390;
+--font-color: #424242;
+--bg-color: #fff;
+--bg2-color: #dedede;
+--heading-color: #292922;
+--titleBar-color: #eee;
+}
+
+[data-theme="dark"] {
+--primary-color: #674ea7;
+--secondary-color: #818cab;
+--font-color: #e1e1ff;
+--bg-color: #161625;
+--bg2-color: #202040;
+--heading-color: #818cab;
+--titleBar-color: #121216
+}
+
+.Title {
+font-size: 45px;
+color: var(--primary-color);
+text-align: center;
+position: relative;
+top: -16px;
+}
+
+body {
+background-color: var(--bg2-color);
+}
+
+.All {
+margin-right: 10%;
+margin-left: 10%;
+background-color: var(--background-color);
+}
+
+.LogoDark {
+display: none;
+
+}
+
+.newPosts {
+display: none;
+
+}
+
+.allSettingsView {
+display: none;
+
+}
+
+#allSearch {
+display: none;
+margin-right: 10%;
+margin-left: 10%;
+}
+
+.Cell {
+margin-right: 5%;
+margin-left: 5%;
+margin-top: 10px;
+margin-bottom: 10px;
+min-width: 90%;
+border-width: 0px;
+border-radius: 12px;
+background-color: var(--bg-color);
+color: var(--font-color);
+}
+
+.titleBar {
+overflow: hidden;
+position: fixed;
+top: 0;
+width: 100%;
+height: 50px;
+
+
+}
+
+.titleBarEnd {
+overflow: hidden;
+position: fixed;
+top: -948px;
+width: 100%;
+height: 20px;
+background-color: var(--titleBar-color);
+
+}
+
+.settingsButton {
+font-size: 40px;
+color: var(--primary-color);
+text-align: center;
+background-color: var(--bg-color);
+border-color: var(--bg-color);
+}
+
+.titleButtons {
+font-size: 40px;
+color: var(--primary-color);
+text-align: center;
+background-color: var(--bg-color);
+border-width: 0px;
+}
+
+.h1ThingClass {
+color: var(--font-color);
+position: relative;
+top: -16px;
+text-align: left;
+}
+
+.h2NameClass {
+position: relative;
+top: -70px;
+text-align: right;
+}
+
+.h3SkysClass {
+color: var(--primary-color);
+position: relative;
+top: -70px;
+font-size: 60px;
+}
+
+
+/*Simple css to style it like a toggle switch*/
+
+.theme-switch-wrapper {
+display: flex;
+align-items: center;
+
+em {
+margin-left: 10px;
+font-size: 1rem;
+}
+}
+.theme-switch {
+display: inline-block;
+height: 34px;
+position: relative;
+width: 60px;
+}
+
+.theme-switch input {
+display:none;
+}
+
+.slider {
+background-color: #ccc;
+bottom: 0;
+cursor: pointer;
+left: 0;
+position: absolute;
+right: 0;
+top: 0;
+transition: .4s;
+}
+
+.slider:before {
+background-color: #fff;
+bottom: 4px;
+content: "";
+height: 26px;
+left: 4px;
+position: absolute;
+transition: .4s;
+width: 26px;
+}
+
+input:checked + .slider {
+background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+
+/* stuff for the lits */
+
+ul{
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: var(--bg-color);
+align-content: center;
+}
+
+li {
+float: left;
+border-right:1px solid var(--bg-color);
+}
+
+li a {
+display: block;
+text-align: center;
+padding: 10px 12px;
+text-decoration: none;
+}
+
+li a:hover {
+display: block;
+color: var(--primary-color)
+text-align: center;
+padding: 10px 12px;
+text-decoration: none;
+}
+
+.active {
+background-color: var(--primary-color);
+}
+
+/* Back button*/
+.back {
+display: inline-block;
+border-radius: 4px;
+background-color: var(--primary-color);
+border: none;
+color: #fff;
+text-align: center;
+font-size: 24px;
+padding: 6px;
+width: 160px;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+
+.back span {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.back span:after {
+content: '<';
+position: absolute;
+opacity: 0;
+top: 0;
+left: 20px;
+transition: 0.5s;
+}
+
+.back:hover span {
+padding-left: 50px;
+}
+
+.back:hover span:after {
+opacity: 1;
+left: 0;
+}
+
+
+.inputStyle {
+font-family: 'Roboto', sans-serif;
+color: var(--secondary-color);
+background-color: var(--bg-color);
+font-size: 15px;
+border-radius: 6px;
+border-color: var(--font-color);
+text-align: center;
+width: 60%;
+height: 60px;
+margin: 10px;
+}
+
+.postButtonStyle {
+font-family: 'Roboto', sans-serif;
+color: var(--bg-color);
+background-color: var(--primary-color);
+font-size: 15px;
+border-radius: 6px;
+border-color: var(--primary-color);
+text-align: center;
+width: 60%;
+height: 60px;
+margin: 10px;
+}
+
+.inputTitleStyle {
+font-family: 'Roboto', sans-serif;
+color: var(--font-color);
+font-size: 35px;
+}
+
+.up {
+color: var(--secondary-color);
+position: relative;
+left: -10px;
+bottom: -10px;
+text-align: justify;
+font-size: 20px;
+}
+
+.down {
+color: var(--secondary-color);
+position: relative;
+left: -10px;
+bottom: -10px;
+text-align: justify;
+font-size: 20px;
+}
+
+.count {
+color: var(--primary-color);
+position: relative;
+left: -10px;
+bottom: -10px;
+text-align: justify;
+font-size: 20px;
+}
+
+.darkModeLabel {
+color: var(--primary-color);
+}
+
+
+</style>
