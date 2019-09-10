@@ -52,10 +52,10 @@
          <ul>
             <li><img id="LogoDarkid" class="LogoDark"src="https://docs.google.com/drawings/d/e/2PACX-1vRw3KAkHxqqrKe3IrGjI9LKNfaJjJmyJtAI94tGdOTNgOZKuY6KdS19UPzAizJs1GdYp1kQl_3z4rfs/pub?w=327&h=100" alt="Highlight"></li>
             <li><img id="LogoLightid" src="https://docs.google.com/drawings/d/e/2PACX-1vSkIHgj8aRk56Sf75CX7iiAel4Rw9c3g9nTSQ5J7B17EOEL63SeAERpSgVoSmBrwD4rW2pNgTam8hz7/pub?w=327&h=100" alt="Highlight"></li>
-	        <li><button id="Home" class="titleButtons" ><i class="fas fa-home"></i></button></li>
-            <li><button id="Settings" class="titleButtons" ><i class="fas fa-cog"></i></button></li>
-            <li><button id="Post" class="titleButtons" ><i class="fas fa-plus-circle"></i></button></li>
-            <li><button id="Search" class="titleButtons" ><i class="fas fa-search"></i></button></li>
+	    <li><button alt="Home" id="Home" class="titleButtons" ><i class="fas fa-home"></i></button></li>
+            <li><button alt="Settings" id="Settings" class="titleButtons" ><i class="fas fa-cog"></i></button></li>
+            <li><button alt="Post" id="Post" class="titleButtons" ><i class="fas fa-plus-circle"></i></button></li>
+            <li><button alt="Search" id="Search" class="titleButtons" ><i class="fas fa-search"></i></button></li>
          </ul>
     </div>
     <div class="titleBarEnd">
@@ -102,7 +102,7 @@
 
             substring = SearchedThing;
 
-            if(searchItems.includes(substring) === true) {
+            if(searchItems.toLowerCase().includes(substring) === true) {
 
               var singlePost = document.createElement("button");
               singlePost.setAttribute('class', 'Cell');
