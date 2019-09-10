@@ -103,7 +103,7 @@
 
             substring = SearchedThing;
 
-            if(searchItems.toLowerCase().includes(substring) === true) {
+            if(searchItems.toLowerCase().includes(substring) === true && SearchedThing != null) {
 
               var singlePost = document.createElement("button");
               singlePost.setAttribute('class', 'Cell');
